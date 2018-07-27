@@ -94,7 +94,7 @@ minetest.register_node("prefab:concrete_stair_inverted", {
 	description = "Prefab Concrete Stair (inverted)",
 	tiles = {"prefab_concrete.png"},
 	paramtype = "light",
-    paramtype2 = "facedir",
+	paramtype2 = "facedir",
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -182,6 +182,8 @@ minetest.register_node("prefab:concrete_ladder", {
 	drawtype = "signlike",
 	description = "Prefab Concrete Ladder",
 	tiles = {"prefab_concrete_ladder.png"},
+	inventory_image = "prefab_concrete_ladder.png",
+	wield_image = "prefab_concrete_ladder.png",
 	paramtype = "light",
 	paramtype2 = "wallmounted",
 	walkable = false,
