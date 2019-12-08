@@ -10,5 +10,7 @@ read_globals = {
 
 	-- deps
 	"minetest",
-	"doors"
+	"doors",
+	"stairsplus",
+	"default"
 }
