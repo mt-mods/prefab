@@ -14,6 +14,7 @@ This mod depends on:
 
  * default (included in minetest_game)
  * doors (included in minetest_game)
+ * moreblocks (optional)
 
 ## License
 
