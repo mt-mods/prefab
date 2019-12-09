@@ -2,8 +2,8 @@ minetest.register_craft({
 	output = "prefab:boat",
 	recipe = {
 		{"", "", ""},
-		{"prefab:concrete_slab", "", "prefab:concrete_slab"},
-		{"prefab:concrete_slab", "prefab:concrete_slab", "prefab:concrete_slab"},
+		{"prefab:slab_concrete", "", "prefab:slab_concrete"},
+		{"prefab:slab_concrete", "prefab:slab_concrete", "prefab:slab_concrete"},
 	},
 })
 
@@ -34,15 +34,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'prefab:concrete_stair 4',
-	recipe = {
-		{'prefab:concrete', '', ''},
-		{'prefab:concrete', 'prefab:concrete', ''},
-		{'prefab:concrete', 'prefab:concrete', 'prefab:concrete'},
-	}
-})
-
-minetest.register_craft({
 	output = 'prefab:concrete_stair_inverted',
 	recipe = {
 		{'prefab:concrete_stair'},
@@ -50,16 +41,9 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'prefab:concrete_slab 6',
-	recipe = {
-		{'prefab:concrete', 'prefab:concrete', 'prefab:concrete'},
-	}
-})
-
-minetest.register_craft({
 	output = 'prefab:concrete_slab_inverted',
 	recipe = {
-		{'prefab:concrete_slab'},
+		{'prefab:slab_concrete'},
 	}
 })
 
@@ -117,16 +101,16 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'prefab:concrete_bollard 2',
 	recipe = {
-		{'prefab:concrete_slab'},
+		{'prefab:slab_concrete'},
 		{'prefab:concrete_fence'},
-		{'prefab:concrete_slab'},
+		{'prefab:slab_concrete'},
 	}
 })
 
 minetest.register_craft({
 	output = 'prefab:concrete_bench 2',
 	recipe = {
-		{'prefab:concrete_slab'},
+		{'prefab:slab_concrete'},
 		{'prefab:concrete_fence'},
 	}
 })
@@ -171,6 +155,6 @@ minetest.register_craft({
 	output = 'prefab:concrete_catwalk 4',
 	recipe = {
 		{'prefab:concrete_railing','','prefab:concrete_railing'},
-		{'prefab:concrete_slab','prefab:concrete_slab','prefab:concrete_slab'},
+		{'prefab:slab_concrete','prefab:slab_concrete','prefab:slab_concrete'},
 	}
 })
