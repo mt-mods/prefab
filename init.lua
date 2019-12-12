@@ -29,8 +29,8 @@ stairsplus:register_all("prefab", "concrete", "prefab:concrete", {
 })
 
 -- compat for old worlds, alias normal stairs and slabs to moreblocks variant
-minetest.register_alias("prefab:concrete_stair", "prefab:stair_concrete")
-minetest.register_alias("prefab:concrete_slab", "prefab:slab_concrete")
+minetest.register_alias_force("prefab:concrete_stair", "prefab:stair_concrete")
+minetest.register_alias_force("prefab:concrete_slab", "prefab:slab_concrete")
 
 
 
