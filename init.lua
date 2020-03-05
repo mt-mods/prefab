@@ -13,13 +13,19 @@ local damage = tonumber(minetest.settings:get("prefab.electric_fence_damage")) o
 if creative then damage = 0 end
 
 minetest.register_node("prefab:concrete", {
-        drawtype = "normal",
+  drawtype = "normal",
 	description = "Block of Prefab Concrete",
 	paramtype = "light",
+  paramtype2 = "color",
+  palette = "unifieddyes_palette_extended.png",
 	tiles = {"prefab_concrete.png"},
 	is_ground_content = false,
-	drop = "prefab:concrete",
-	groups = {cracky=2},
+	groups = {
+    cracky=2,
+    ud_param2_colorable = 1
+  },
+  on_construct = unifieddyes.on_construct,
+  on_dig = unifieddyes.on_dig,
 })
 
 stairsplus:register_all("prefab", "concrete", "prefab:concrete", {
