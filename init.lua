@@ -16,13 +16,28 @@ minetest.register_node("prefab:concrete", {
   drawtype = "normal",
 	description = "Block of Prefab Concrete",
 	paramtype = "light",
+	tiles = {"prefab_concrete.png"},
+	is_ground_content = false,
+  palette = "unifieddyes_palette_extended.png",
+	groups = {
+    cracky = 2,
+    ud_param2_colorable = 1,
+  },
+  airbrush_replacement_node = "prefab:concrete_colored"
+})
+
+minetest.register_node("prefab:concrete_colored", {
+  drawtype = "normal",
+	description = "Colored block of Prefab Concrete",
+	paramtype = "light",
   paramtype2 = "color",
   palette = "unifieddyes_palette_extended.png",
 	tiles = {"prefab_concrete.png"},
 	is_ground_content = false,
 	groups = {
-    cracky=2,
-    ud_param2_colorable = 1
+    cracky = 2,
+    ud_param2_colorable = 1,
+    not_in_creative_inventory = 1
   },
   on_construct = unifieddyes.on_construct,
   on_dig = unifieddyes.on_dig,
