@@ -43,6 +43,18 @@ minetest.register_node("prefab:concrete_colored", {
   on_dig = unifieddyes.on_dig,
 })
 
+unifieddyes.register_color_craft({
+	output = "prefab:concrete_colored",
+	palette = "extended",
+	type = "shapeless",
+	neutral_node = "prefab:concrete",
+	recipe = {
+		"NEUTRAL_NODE",
+		"MAIN_DYE"
+	}
+})
+
+
 stairsplus:register_all("prefab", "concrete", "prefab:concrete", {
   description = "Prefab Concrete",
   tiles = {"prefab_concrete.png"},
