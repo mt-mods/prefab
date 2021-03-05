@@ -1,6 +1,7 @@
 # Prefab
 
 This mod provides pre-fabricated concrete nodes to your Minetest world.
+Adds support for the full unifieddyes palette as well as all moreblock/stairplus shapes
 
 ![Screenshot](https://raw.githubusercontent.com/minetest-mods/prefab/master/screenshot.png)
 
@@ -14,7 +15,8 @@ This mod depends on:
 
  * default (included in minetest_game)
  * doors (included in minetest_game)
- * moreblocks (optional)
+ * moreblocks
+ * unifieddyes
 
 ## License
 
