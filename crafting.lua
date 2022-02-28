@@ -34,20 +34,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'prefab:concrete_stair_inverted',
-	recipe = {
-		{'prefab:concrete_stair'},
-	}
-})
-
-minetest.register_craft({
-	output = 'prefab:concrete_slab_inverted',
-	recipe = {
-		{'prefab:slab_concrete'},
-	}
-})
-
-minetest.register_craft({
 	output = 'prefab:concrete_slit 4',
 	recipe = {
 		{'prefab:concrete', 'prefab:concrete', 'prefab:concrete'},
@@ -119,13 +105,6 @@ minetest.register_craft({
 	output = 'prefab:concrete_railing 2',
 	recipe = {
 		{'prefab:concrete_fence','prefab:concrete_fence'},
-	}
-})
-
-minetest.register_craft({
-	output = 'prefab:concrete_railing_corner 2',
-	recipe = {
-		{'prefab:concrete_railing','prefab:concrete_railing'},
 	}
 })
 
