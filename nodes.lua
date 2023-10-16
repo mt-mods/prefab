@@ -181,13 +181,15 @@ minetest.register_node("prefab:concrete_fence", {
 	groups = {cracky=2},
 })
 
-doors.register_door("prefab:concrete_door", {
-	description = "Concrete Door",
-	inventory_image = "prefab_concrete_door_inv.png",
-	groups = {cracky=2,door=1},
-	tiles = {"prefab_concrete_door.png"},
-	only_placer_can_open = true,
-})
+if minetest.get_modpath("doors") then
+	doors.register_door("prefab:concrete_door", {
+		description = "Concrete Door",
+		inventory_image = "prefab_concrete_door_inv.png",
+		groups = {cracky=2,door=1},
+		tiles = {"prefab_concrete_door.png"},
+		only_placer_can_open = true,
+	})
+end
 
 minetest.register_node("prefab:concrete_cylinder", {
     drawtype = "nodebox",
@@ -266,9 +268,11 @@ minetest.register_node("prefab:concrete_bench", {
 	groups = {cracky=2,falling_node=1},
 })
 
+local has_default = minetest.get_modpath("default")
+
 minetest.register_node("prefab:concrete_railing", {
 	description = "Concrete Railing",
-	sounds = default.node_sound_stone_defaults(),
+	sounds = has_default and default.node_sound_stone_defaults(),
 	paramtype = "light",
 	drawtype = "nodebox",
 	tiles = {"prefab_concrete.png"},
