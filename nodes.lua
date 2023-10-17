@@ -1,6 +1,8 @@
 local damage = tonumber(minetest.settings:get("prefab.electric_fence_damage")) or 30
 if minetest.settings:get_bool("creative_mode") then damage = 0 end
 
+local has_default = minetest.get_modpath("default")
+
 minetest.register_node("prefab:concrete", {
     drawtype = "normal",
 	description = "Block of Prefab Concrete",
@@ -55,18 +57,21 @@ if minetest.get_modpath("moreblocks") then
     minetest.register_alias("prefab:concrete_slab_inverted", "prefab:slab_concrete")
 end
 
-minetest.register_node("prefab:concrete_with_grass", {
-	description = "Prefab Concrete with Grass",
-	paramtype = "light",
-	tiles = {
-        "default_grass.png",
-        "prefab_concrete.png",
-        "prefab_concrete_grass.png"
-    },
-	is_ground_content = false,
-	drop = "prefab:concrete",
-	groups = {cracky=2},
-})
+if has_default then
+	-- node has grass texture from default
+	minetest.register_node("prefab:concrete_with_grass", {
+		description = "Prefab Concrete with Grass",
+		paramtype = "light",
+		tiles = {
+			"default_grass.png",
+			"prefab_concrete.png",
+			"prefab_concrete_grass.png"
+		},
+		is_ground_content = false,
+		drop = "prefab:concrete",
+		groups = {cracky=2},
+	})
+end
 
 minetest.register_node("prefab:concrete_wall", {
     drawtype = "nodebox",
@@ -267,8 +272,6 @@ minetest.register_node("prefab:concrete_bench", {
 	drop = "prefab:concrete_bench",
 	groups = {cracky=2,falling_node=1},
 })
-
-local has_default = minetest.get_modpath("default")
 
 minetest.register_node("prefab:concrete_railing", {
 	description = "Concrete Railing",
