@@ -133,6 +133,7 @@ minetest.register_node("prefab:concrete_window", {
     },
 	paramtype = "light",
 	paramtype2 = "facedir",
+	use_texture_alpha = "clip",
 	node_box = {
 		type = "fixed",
 		fixed = {
