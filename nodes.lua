@@ -396,3 +396,14 @@ minetest.register_node("prefab:concrete_catwalk",{
 	groups={cracky=2},
 	drop = "prefab:concrete_catwalk",
 })
+
+if minetest.get_modpath("slats") and minetest.get_modpath("default") then
+	slats.register_slat(
+		"prefab",
+		"prefab:concrete",
+		{cracky = 2},
+		"prefab_concrete.png^slats_slat_overlay.png^[makealpha:255,126,126",
+		"Prefabe concrete Slat",
+		default.node_sound_stone_defaults()
+	)
+end

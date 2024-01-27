@@ -13,5 +13,6 @@ read_globals = {
 	"doors",
 	"stairsplus",
 	"unifieddyes",
+	"slats",
 	"default"
 }
