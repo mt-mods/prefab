@@ -121,16 +121,16 @@ minetest.register_node("prefab:concrete_slit", {
 })
 
 minetest.register_node("prefab:concrete_window", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Prefab Concrete Framed Window",
 	tiles = {
-        "prefab_concrete.png",
-        "prefab_concrete.png",
-        "prefab_concrete.png",
-        "prefab_concrete.png",
-        "prefab_concrete_window.png",
-        "prefab_concrete_window.png"
-    },
+		"prefab_concrete.png",
+		"prefab_concrete.png",
+		"prefab_concrete.png",
+		"prefab_concrete.png",
+		"prefab_concrete_window.png",
+		"prefab_concrete_window.png"
+	},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	use_texture_alpha = "clip",
@@ -198,7 +198,7 @@ if minetest.get_modpath("doors") then
 end
 
 minetest.register_node("prefab:concrete_cylinder", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Prefab Concrete Cylinder",
 	tiles = {"prefab_concrete.png"},
 	paramtype = "light",
@@ -223,7 +223,7 @@ minetest.register_node("prefab:concrete_cylinder", {
 })
 
 minetest.register_node("prefab:concrete_bollard", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Prefab Concrete Bollard",
 	tiles = {"prefab_concrete.png"},
 	paramtype = "light",
@@ -251,7 +251,7 @@ minetest.register_node("prefab:concrete_bollard", {
 })
 
 minetest.register_node("prefab:concrete_bench", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Prefab Concrete Bench",
 	tiles = {"prefab_concrete.png"},
 	paramtype = "light",
@@ -294,12 +294,13 @@ minetest.register_node("prefab:concrete_railing", {
 		type = "fixed",
 		fixed = {{-0.5,-0.5,-0.5,0.5,0.3125,0.5}}
 	},
+	is_ground_content = false,
 	connects_to = {"prefab:concrete_railing","prefab:concrete_catwalk"}
 })
 minetest.register_alias("prefab:concrete_railing_corner", "prefab:concrete_railing")
 
 minetest.register_node("prefab:electric_fence", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Electric Fence",
 	tiles = {"prefab_electric_fence.png"},
 	sunlight_propagates = true,
@@ -319,16 +320,16 @@ minetest.register_node("prefab:electric_fence", {
 })
 
 minetest.register_node("prefab:electric_fence_corner", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Electric Fence Corner",
 	tiles = {
-        "prefab_electric_fence_corner_top.png",
-        "prefab_electric_fence_corner_top.png",
-        "prefab_electric_fence_corner_side1.png",
-        "prefab_electric_fence_corner_side2.png",
-        "prefab_electric_fence_corner_side1.png",
-        "prefab_electric_fence_corner_side2.png"
-    },
+		"prefab_electric_fence_corner_top.png",
+		"prefab_electric_fence_corner_top.png",
+		"prefab_electric_fence_corner_side1.png",
+		"prefab_electric_fence_corner_side2.png",
+		"prefab_electric_fence_corner_side1.png",
+		"prefab_electric_fence_corner_side2.png"
+	},
 	sunlight_propagates = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -349,16 +350,16 @@ minetest.register_node("prefab:electric_fence_corner", {
 })
 
 minetest.register_node("prefab:electric_fence_end", {
-    drawtype = "nodebox",
+	drawtype = "nodebox",
 	description = "Electric Fence End",
 	tiles = {
-        "prefab_electric_fence_end1.png",
-        "prefab_electric_fence_end1.png",
-        "prefab_concrete.png",
-        "prefab_concrete.png",
-        "prefab_electric_fence_end2.png",
-        "prefab_electric_fence_end1.png"
-    },
+		"prefab_electric_fence_end1.png",
+		"prefab_electric_fence_end1.png",
+		"prefab_concrete.png",
+		"prefab_concrete.png",
+		"prefab_electric_fence_end2.png",
+		"prefab_electric_fence_end1.png"
+	},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	node_box = {
@@ -393,6 +394,7 @@ minetest.register_node("prefab:concrete_catwalk",{
 			{-0.500000,0.448454,-0.500000,-0.437500,0.500000,0.500000},
 		},
 	},
+	is_ground_content = false,
 	groups={cracky=2},
 	drop = "prefab:concrete_catwalk",
 })
