@@ -121,7 +121,7 @@ function boat:on_step(dtime)
 			if y < 0 then
 				self.object:set_acceleration({x=0, y=10, z=0})
 			end
-			self.object:set_velocity(get_velocity(self.v, self.object:getyaw(), y))
+			self.object:set_velocity(get_velocity(self.v, self.object:get_yaw(), y))
 		else
 			self.object:set_acceleration({x=0, y=0, z=0})
 			if math.abs(self.object:get_velocity().y) < 1 then
