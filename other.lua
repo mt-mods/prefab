@@ -4,8 +4,8 @@
 --
 
 local function is_water(pos)
-	local nn = minetest.get_node(pos).name
-	return minetest.get_item_group(nn, "water") ~= 0
+	local nn = core.get_node(pos).name
+	return core.get_item_group(nn, "water") ~= 0
 end
 
 local function get_sign(i)
@@ -27,7 +27,7 @@ local function get_v(v)
 end
 
 --
--- Cart entity
+-- Boat entity
 --
 
 local boat = {
@@ -105,7 +105,7 @@ function boat:on_step(dtime)
 	local p = self.object:get_pos()
 	p.y = p.y-0.5
 	if not is_water(p) then
-		if minetest.registered_nodes[minetest.get_node(p).name].walkable then
+		if core.registered_nodes[core.get_node(p).name].walkable then
 			self.v = 0
 		end
 		self.object:set_acceleration({x=0, y=-10, z=0})
@@ -136,9 +136,9 @@ function boat:on_step(dtime)
 	end
 end
 
-minetest.register_entity("prefab:boat", boat)
+core.register_entity("prefab:boat", boat)
 
-minetest.register_craftitem("prefab:boat", {
+core.register_craftitem("prefab:boat", {
 	description = "Prefab Concrete Barge",
 	inventory_image = "prefab_boat_inventory.png",
 	wield_scale = {x=2, y=2, z=1},
@@ -152,7 +152,7 @@ minetest.register_craftitem("prefab:boat", {
 			return
 		end
 		pointed_thing.under.y = pointed_thing.under.y-0.5
-		minetest.add_entity(pointed_thing.under, "prefab:boat")
+		core.add_entity(pointed_thing.under, "prefab:boat")
 		itemstack:take_item()
 		return itemstack
 	end,

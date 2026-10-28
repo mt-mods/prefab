@@ -9,7 +9,7 @@ read_globals = {
 	"dump", "VoxelArea",
 
 	-- deps
-	"minetest",
+	"core",
 	"doors",
 	"stairsplus",
 	"unifieddyes",

@@ -1,9 +1,9 @@
-local damage = tonumber(minetest.settings:get("prefab.electric_fence_damage")) or 30
-if minetest.settings:get_bool("creative_mode") then damage = 0 end
+local damage = tonumber(core.settings:get("prefab.electric_fence_damage")) or 30
+if core.settings:get_bool("creative_mode") then damage = 0 end
 
-local has_default = minetest.get_modpath("default")
+local has_default = core.get_modpath("default")
 
-minetest.register_node("prefab:concrete", {
+core.register_node("prefab:concrete", {
     drawtype = "normal",
 	description = "Block of Prefab Concrete",
 	paramtype = "light",
@@ -12,13 +12,13 @@ minetest.register_node("prefab:concrete", {
 	groups = {cracky = 2, ud_param2_colorable = 1},
 })
 
-if minetest.get_modpath("unifieddyes") then
-    minetest.override_item("prefab:concrete", {
+if core.get_modpath("unifieddyes") then
+    core.override_item("prefab:concrete", {
         palette = "unifieddyes_palette_extended.png",
         airbrush_replacement_node = "prefab:concrete_colored"
     })
 
-    minetest.register_node("prefab:concrete_colored", {
+    core.register_node("prefab:concrete_colored", {
         drawtype = "normal",
         description = "Colored block of Prefab Concrete",
         paramtype = "light",
@@ -43,7 +43,7 @@ if minetest.get_modpath("unifieddyes") then
     })
 end
 
-if minetest.get_modpath("moreblocks") then
+if core.get_modpath("moreblocks") then
     stairsplus:register_all("prefab", "concrete", "prefab:concrete", {
         description = "Prefab Concrete",
         tiles = {"prefab_concrete.png"},
@@ -51,15 +51,15 @@ if minetest.get_modpath("moreblocks") then
     })
 
     -- compat for old worlds, alias normal stairs and slabs to moreblocks variant
-    minetest.register_alias_force("prefab:concrete_stair", "prefab:stair_concrete")
-    minetest.register_alias_force("prefab:concrete_slab", "prefab:slab_concrete")
-    minetest.register_alias("prefab:concrete_stair_inverted", "prefab:stair_concrete")
-    minetest.register_alias("prefab:concrete_slab_inverted", "prefab:slab_concrete")
+    core.register_alias_force("prefab:concrete_stair", "prefab:stair_concrete")
+    core.register_alias_force("prefab:concrete_slab", "prefab:slab_concrete")
+    core.register_alias("prefab:concrete_stair_inverted", "prefab:stair_concrete")
+    core.register_alias("prefab:concrete_slab_inverted", "prefab:slab_concrete")
 end
 
 if has_default then
 	-- node has grass texture from default
-	minetest.register_node("prefab:concrete_with_grass", {
+	core.register_node("prefab:concrete_with_grass", {
 		description = "Prefab Concrete with Grass",
 		paramtype = "light",
 		tiles = {
@@ -73,7 +73,7 @@ if has_default then
 	})
 end
 
-minetest.register_node("prefab:concrete_wall", {
+core.register_node("prefab:concrete_wall", {
     drawtype = "nodebox",
 	description = "Prefab Concrete Wall Section",
 	tiles = {
@@ -97,7 +97,7 @@ minetest.register_node("prefab:concrete_wall", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:concrete_slit", {
+core.register_node("prefab:concrete_slit", {
     drawtype = "nodebox",
 	description = "Prefab Horizontal Concrete Slit",
 	tiles = {"prefab_concrete.png"},
@@ -120,7 +120,7 @@ minetest.register_node("prefab:concrete_slit", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:concrete_window", {
+core.register_node("prefab:concrete_window", {
 	drawtype = "nodebox",
 	description = "Prefab Concrete Framed Window",
 	tiles = {
@@ -155,7 +155,7 @@ minetest.register_node("prefab:concrete_window", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:concrete_ladder", {
+core.register_node("prefab:concrete_ladder", {
 	drawtype = "signlike",
 	description = "Prefab Concrete Ladder",
 	tiles = {"prefab_concrete_ladder.png"},
@@ -173,7 +173,7 @@ minetest.register_node("prefab:concrete_ladder", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:concrete_fence", {
+core.register_node("prefab:concrete_fence", {
 	description = "Prefab Concrete Fence",
 	drawtype = "fencelike",
 	paramtype = "light",
@@ -187,7 +187,7 @@ minetest.register_node("prefab:concrete_fence", {
 	groups = {cracky=2},
 })
 
-if minetest.get_modpath("doors") then
+if core.get_modpath("doors") then
 	doors.register_door("prefab:concrete_door", {
 		description = "Concrete Door",
 		inventory_image = "prefab_concrete_door_inv.png",
@@ -197,7 +197,7 @@ if minetest.get_modpath("doors") then
 	})
 end
 
-minetest.register_node("prefab:concrete_cylinder", {
+core.register_node("prefab:concrete_cylinder", {
 	drawtype = "nodebox",
 	description = "Prefab Concrete Cylinder",
 	tiles = {"prefab_concrete.png"},
@@ -222,7 +222,7 @@ minetest.register_node("prefab:concrete_cylinder", {
 	groups = {cracky=2,falling_node=1},
 })
 
-minetest.register_node("prefab:concrete_bollard", {
+core.register_node("prefab:concrete_bollard", {
 	drawtype = "nodebox",
 	description = "Prefab Concrete Bollard",
 	tiles = {"prefab_concrete.png"},
@@ -250,7 +250,7 @@ minetest.register_node("prefab:concrete_bollard", {
 	groups = {cracky=2,falling_node=1},
 })
 
-minetest.register_node("prefab:concrete_bench", {
+core.register_node("prefab:concrete_bench", {
 	drawtype = "nodebox",
 	description = "Prefab Concrete Bench",
 	tiles = {"prefab_concrete.png"},
@@ -274,7 +274,7 @@ minetest.register_node("prefab:concrete_bench", {
 	groups = {cracky=2,falling_node=1},
 })
 
-minetest.register_node("prefab:concrete_railing", {
+core.register_node("prefab:concrete_railing", {
 	description = "Concrete Railing",
 	sounds = has_default and default.node_sound_stone_defaults(),
 	paramtype = "light",
@@ -297,9 +297,9 @@ minetest.register_node("prefab:concrete_railing", {
 	is_ground_content = false,
 	connects_to = {"prefab:concrete_railing","prefab:concrete_catwalk"}
 })
-minetest.register_alias("prefab:concrete_railing_corner", "prefab:concrete_railing")
+core.register_alias("prefab:concrete_railing_corner", "prefab:concrete_railing")
 
-minetest.register_node("prefab:electric_fence", {
+core.register_node("prefab:electric_fence", {
 	drawtype = "nodebox",
 	description = "Electric Fence",
 	tiles = {"prefab_electric_fence.png"},
@@ -319,7 +319,7 @@ minetest.register_node("prefab:electric_fence", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:electric_fence_corner", {
+core.register_node("prefab:electric_fence_corner", {
 	drawtype = "nodebox",
 	description = "Electric Fence Corner",
 	tiles = {
@@ -349,7 +349,7 @@ minetest.register_node("prefab:electric_fence_corner", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:electric_fence_end", {
+core.register_node("prefab:electric_fence_end", {
 	drawtype = "nodebox",
 	description = "Electric Fence End",
 	tiles = {
@@ -378,7 +378,7 @@ minetest.register_node("prefab:electric_fence_end", {
 	groups = {cracky=2},
 })
 
-minetest.register_node("prefab:concrete_catwalk",{
+core.register_node("prefab:concrete_catwalk",{
 	drawtype="nodebox",
 	description= "Prefab Concrete Catwalk",
 	paramtype = "light",
@@ -399,13 +399,13 @@ minetest.register_node("prefab:concrete_catwalk",{
 	drop = "prefab:concrete_catwalk",
 })
 
-if minetest.get_modpath("slats") and minetest.get_modpath("default") then
+if core.get_modpath("slats") and core.get_modpath("default") then
 	slats.register_slat(
 		"prefab",
 		"prefab:concrete",
 		{cracky = 2},
 		"prefab_concrete.png^slats_slat_overlay.png^[makealpha:255,126,126",
-		"Prefabe concrete Slat",
+		"Prefab Concrete Slat",
 		default.node_sound_stone_defaults()
 	)
 end
